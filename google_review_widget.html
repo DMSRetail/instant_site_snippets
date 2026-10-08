@@ -1,0 +1,333 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap');
+
+  .custom-reviews-section {
+    background-color: ##F1EDE7 !important;
+    padding: 60px 20px;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden; 
+  }
+
+  .custom-reviews-header {
+    font-family: 'DM Serif Text', serif;
+    text-align: center;
+    font-size: 42px;
+    color: #222222;
+    margin-bottom: 40px;
+    font-weight: bold;
+  }
+  .custom-reviews-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .custom-reviews-track {
+    display: flex;
+    align-items: stretch; 
+    gap: 24px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 10px; 
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+  }
+  .custom-reviews-track::-webkit-scrollbar {
+    display: none; 
+  }
+  .custom-review-card {
+    background: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    padding: 24px;
+    padding-bottom: 60px; 
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 0 0 320px; 
+    height: 380px; /* Fixed height keeps the row perfectly uniform */
+    position: relative; 
+  }
+
+  .custom-review-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.08);
+    border-color: #d0d0d0;
+  }
+
+  .custom-review-stars {
+    color: #fbbc05; 
+    font-size: 20px;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+    flex-shrink: 0;
+  }
+
+  .custom-review-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444444;
+    margin-bottom: 24px;
+    flex-grow: 1;
+    overflow-y: auto; /* Adds a scrollbar ONLY if the text is too long */
+    padding-right: 8px; /* Adds a little breathing room for the scrollbar */
+  }
+
+  /* Custom scrollbar styling for a cleaner look */
+  .custom-review-text::-webkit-scrollbar {
+    width: 4px;
+  }
+  .custom-review-text::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-review-text::-webkit-scrollbar-thumb {
+    background-color: #dddddd;
+    border-radius: 4px;
+  }
+  .custom-review-text::-webkit-scrollbar-thumb:hover {
+    background-color: #bbbbbb;
+  }
+
+  .custom-review-author {
+    font-weight: 600;
+    font-size: 16px;
+    color: #111111;
+    flex-shrink: 0;
+  }
+
+  /* GOOGLE LOGO IN BOTTOM RIGHT */
+  .google-card-logo {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+  }
+
+  /* SCROLL ARROWS */
+  .scroll-arrow {
+    background: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-size: 20px;
+    color: #333;
+    transition: background 0.2s, box-shadow 0.2s, opacity 0.3s ease;
+  }
+  .scroll-arrow:hover {
+    background: #f9f9f9;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  }
+  .left-arrow {
+    left: -24px;
+  }
+  .right-arrow {
+    right: -24px;
+  }
+
+  @media (max-width: 768px) {
+    .scroll-arrow {
+      display: none;
+    }
+  }
+</style>
+<div class="custom-reviews-section" style="background-color: #F1EDE7 !important;">
+<!-- WIDGET HTML -->
+<div class="custom-reviews-section">
+  
+  <h2 class="custom-reviews-header">Field Tested</h2>
+  
+  <div class="custom-reviews-container">
+    
+    <!-- Left Scroll Button -->
+    <button class="scroll-arrow left-arrow" onclick="scrollReviewCards(-1)" aria-label="Scroll Left">
+      &#8592;
+    </button>
+
+    <div class="custom-reviews-track" id="custom-reviews-track">
+
+      <!-- ================== REVIEW CARD 1 ================== -->
+      <div class="custom-review-card">
+        <div class="custom-review-stars">★★★★★</div>
+        <div class="custom-review-text">
+          "Just received my glasses. As usual GREAT SERVICE!! Talked with a very nice ladie on the phone. She had me take a picture of my prescription send it to her via text. Bam with in less than a week I received them . A million thank yous"
+        </div>
+        <div class="custom-review-author">Hal Wilks</div>
+        <svg class="google-card-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+          <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+          <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+          <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+          <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+        </svg>
+      </div>
+
+      <!-- ================== REVIEW CARD 2 ================== -->
+      <div class="custom-review-card">
+        <div class="custom-review-stars">★★★★★</div>
+        <div class="custom-review-text">
+          "Fast service and good quality"
+        </div>
+        <div class="custom-review-author">Brian Dundy</div>
+        <svg class="google-card-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+          <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+          <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+          <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+          <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+        </svg>
+      </div>
+
+      <!-- ================== REVIEW CARD 3 ================== -->
+      <div class="custom-review-card">
+        <div class="custom-review-stars">★★★★★</div>
+        <div class="custom-review-text">
+          "Never had a problem with my glasses these people are honest, kind & know what they're doing. They are also very reasonable on their prices. I recommend Tom Waters, they are just good people!!"
+        </div>
+        <div class="custom-review-author">Penny SMITH</div>
+        <svg class="google-card-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+          <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+          <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+          <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+          <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+        </svg>
+      </div>
+
+      <!-- ================== REVIEW CARD 4 ================== -->
+      <div class="custom-review-card">
+        <div class="custom-review-stars">★★★★★</div>
+        <div class="custom-review-text">
+          "I recently visited the optical department to have new lenses made as I have a new script. There is a new lady working there and my progressive lens are spot on! Within a week I had my lens mailed to my home with a screw kit to install them on my old frames."
+        </div>
+        <div class="custom-review-author">Brad</div>
+        <svg class="google-card-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+          <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+          <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+          <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+          <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+        </svg>
+      </div>
+
+      <!-- ================== REVIEW CARD 5 ================== -->
+      <div class="custom-review-card">
+        <div class="custom-review-stars">★★★★★</div>
+        <div class="custom-review-text">
+          "The staff is so nice and they helped us from beginning to end. Great customer service."
+        </div>
+        <div class="custom-review-author">Shelly</div>
+        <svg class="google-card-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+          <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+          <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+          <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+          <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+        </svg>
+      </div>
+
+      <!-- ================== REVIEW CARD 6 ================== -->
+      <div class="custom-review-card">
+        <div class="custom-review-stars">★★★★★</div>
+        <div class="custom-review-text">
+          "Good selection of work clothes"
+        </div>
+        <div class="custom-review-author">Ty Jones</div>
+        <svg class="google-card-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+          <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+          <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+          <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+          <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+        </svg>
+      </div>
+
+      <!-- ================== REVIEW CARD 7 ================== -->
+      <div class="custom-review-card">
+        <div class="custom-review-stars">★★★★★</div>
+        <div class="custom-review-text">
+          "Great people"
+        </div>
+        <div class="custom-review-author">David White</div>
+        <svg class="google-card-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+          <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+          <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+          <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+          <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+        </svg>
+      </div>
+
+      <!-- ================== REVIEW CARD 8 ================== -->
+      <div class="custom-review-card">
+        <div class="custom-review-stars">★★★★★</div>
+        <div class="custom-review-text">
+          "I could not recommend this place any more than I'm about to! And it all starts with the staff! Veronica was an absolute pleasure to deal with! I've been hunting down a certain pair of boots for months, with Ariat saying they're discontinued. ChatGPT finally found a lead when I searched again today, and lo and behold here they were at Tom's!! Veronica made the experience an 11/10 with how kind, helpful, and caring she was. She could tell how much these boots meant to me, and she made sure I got exactly what I needed, all while showcasing a beautiful level of shared emotion! I live in Indiana, but I might just have to visit Louisiana for the 1st time just to see how awesome this store and it's staff are! Thank you Tom's! Thank you Veronica!"
+        </div>
+        <div class="custom-review-author">Dakota Coppinger</div>
+        <svg class="google-card-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+          <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+          <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+          <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+          <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+        </svg>
+      </div>
+
+    </div>
+
+    <!-- Right Scroll Button -->
+    <button class="scroll-arrow right-arrow" onclick="scrollReviewCards(1)" aria-label="Scroll Right">
+      &#8594;
+    </button>
+
+  </div>
+</div>
+
+<script>
+  const track = document.getElementById('custom-reviews-track');
+  const leftArrow = document.querySelector('.left-arrow');
+  const rightArrow = document.querySelector('.right-arrow');
+
+  function scrollReviewCards(direction) {
+    const scrollAmount = 344;
+    track.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth'
+    });
+  }
+
+  function updateArrows() {
+    // Hide left arrow if at the beginning (0 pixels scrolled)
+    if (track.scrollLeft <= 0) {
+      leftArrow.style.opacity = '0';
+      leftArrow.style.pointerEvents = 'none'; // Prevents clicking while invisible
+    } else {
+      leftArrow.style.opacity = '1';
+      leftArrow.style.pointerEvents = 'auto';
+    }
+
+    // Hide right arrow if at the very end
+    // (scrollLeft + width of visible container >= total scrollable width)
+    if (Math.ceil(track.scrollLeft + track.clientWidth) >= track.scrollWidth) {
+      rightArrow.style.opacity = '0';
+      rightArrow.style.pointerEvents = 'none';
+    } else {
+      rightArrow.style.opacity = '1';
+      rightArrow.style.pointerEvents = 'auto';
+    }
+  }
+
+  // Listen for the user scrolling manually or via buttons
+  track.addEventListener('scroll', updateArrows);
+  
+  // Update in case the user resizes their browser window
+  window.addEventListener('resize', updateArrows);
+
+  // Run once on initial load to make sure left arrow starts hidden
+  updateArrows();
+</script>
