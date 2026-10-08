@@ -1,0 +1,127 @@
+<style>
+  /* The main container that hides the overflow */
+  .custom-logo-ribbon {
+    width: 100%;
+    overflow: hidden;
+    background-color: #ffffff; 
+    padding: 30px 0;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  /* Fade-in/fade-out edges */
+  .custom-logo-ribbon::before,
+  .custom-logo-ribbon::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 25px;
+    height: 100%;
+    z-index: 2;
+  }
+  .custom-logo-ribbon::before {
+    left: 0;
+    background: linear-gradient(to right, white 0%, rgb(255, 255, 255) 100%);
+  }
+  .custom-logo-ribbon::after {
+    right: 0;
+    background: linear-gradient(to left, white 0%, rgb(255, 255, 255) 100%);
+  }
+
+  /* The track that holds the images and animates */
+  .logo-track {
+    display: flex;
+    align-items: center;
+    /* UPDATED: 200px multiplied by 32 (your total number of images) */
+    width: calc(200px * 32); 
+    animation: scroll-ribbon 40s linear infinite; /* Slowed down to 40s since the track is much longer now */
+  }
+
+  /* Pause the scrolling on hover */
+  .custom-logo-ribbon:hover .logo-track {
+    animation-play-state: paused;
+  }
+
+  /* Styling for the individual logos */
+  .logo-track img {
+    height: 60px; 
+    width: auto;
+    max-width: 150px; 
+    margin: 0 40px; 
+    object-fit: contain;
+    filter: grayscale(100%); 
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    flex-shrink: 0; /* CRITICAL FIX: Stops the browser from crushing the images to 0 width */
+  }
+
+  .logo-track img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+
+  /* The animation rule */
+  @keyframes scroll-ribbon {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      /* UPDATED: -200px multiplied by 16 (your number of unique original logos) */
+      transform: translateX(calc(-200px * 16)); 
+    }
+  }
+  
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    .logo-track img {
+      height: 40px;
+      margin: 0 20px;
+    }
+    .custom-logo-ribbon::before,
+    .custom-logo-ribbon::after {
+      width: 40px; 
+    }
+  }
+</style>
+
+<!-- HTML Structure -->
+<div class="custom-logo-ribbon">
+  <div class="logo-track">
+    <!-- ORIGINAL SET OF LOGOS -->
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307271884.jpg" alt="Logo 1">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307273422.jpg" alt="Logo 2">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307280575.jpg" alt="Logo 3">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307270664.jpg" alt="Logo 4">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307280581.jpg" alt="Logo 5">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307280587.jpg" alt="Logo 6">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307273428.jpg" alt="Logo 7">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307273434.jpg" alt="Logo 8">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307271890.jpg" alt="Logo 9">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307280581.jpg" alt="Logo 10">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307273446.jpg" alt="Logo 11">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307266711.jpg" alt="Logo 12">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307266717.jpg" alt="Logo 13">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307280593.jpg" alt="Logo 14">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307280599.jpg" alt="Logo 15">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307266723.jpg" alt="Logo 16">
+    
+
+    <!-- DUPLICATE SET OF LOGOS (Required for the seamless loop effect) -->
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307271884.jpg" alt="Logo 1">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307273422.jpg" alt="Logo 2">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307280575.jpg" alt="Logo 3">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307270664.jpg" alt="Logo 4">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307280581.jpg" alt="Logo 5">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307280587.jpg" alt="Logo 6">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307273428.jpg" alt="Logo 7">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307273434.jpg" alt="Logo 8">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307271890.jpg" alt="Logo 9">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307280581.jpg" alt="Logo 10">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307273446.jpg" alt="Logo 11">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307266711.jpg" alt="Logo 12">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307266717.jpg" alt="Logo 13">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307280593.jpg" alt="Logo 14">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307280599.jpg" alt="Logo 15">
+    <img src="https://d2j6dbq0eux0bg.cloudfront.net/images/125882543/products/869796640/6307266723.jpg" alt="Logo 16">
+  </div>
+</div>
